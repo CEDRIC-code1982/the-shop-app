@@ -1,9 +1,11 @@
 import React from 'react';
+import { createAppContainer } from 'react-navigation';
 import {
   createStackNavigator,
-  createDrawerNavigator,
-  createAppContainer
+  //createDrawerNavigator,
+  //createAppContainer
 } from 'react-navigation-stack';
+import { createDrawerNavigator } from 'react-navigation-drawer';
 import { Platform } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 

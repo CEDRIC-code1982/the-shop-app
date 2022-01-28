@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
-import { AppLoading } from 'expo';
+import AppLoading from 'expo-app-loading';
 import * as Font from 'expo-font';
 
 import productsReducer from './store/reducers/products';
@@ -32,8 +32,10 @@ export default function App() {
       <AppLoading
         startAsync={fetchFonts}
         onFinish={() => {
-          setFontLoaded(true);
+          setFontLoaded(true)
         }}
+        onError={(err) => console.log(err)
+        }
       />
     );
   }
