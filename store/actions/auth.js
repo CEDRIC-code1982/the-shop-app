@@ -1,4 +1,6 @@
-import AsyncStorage from '@react-native-async-storage/async-storage'
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+import {KEY_API} from "react-native-dotenv";
 
 // export const SIGNUP = 'SIGNUP';
 // export const LOGIN = 'LOGIN';
@@ -18,7 +20,7 @@ export const authenticate = (userId, token, expiryTime) => {
 export const signup = (email, password) => {
   return async dispatch => {
     const response = await fetch(
-      'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyATszcMtwkU655mCNkyD4L0Y_yLq6dUAK8',
+      `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${KEY_API}`,
       {
         method: 'POST',
         headers: {
@@ -61,7 +63,7 @@ export const signup = (email, password) => {
 export const login = (email, password) => {
   return async dispatch => {
     const response = await fetch(
-      'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyATszcMtwkU655mCNkyD4L0Y_yLq6dUAK8',
+      `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${KEY_API}`,
       {
         method: 'POST',
         headers: {
